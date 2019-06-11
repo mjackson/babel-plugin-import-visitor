@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-import-visitor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Visit all import sources in Babel",
   "author": "Michael Jackson <michael@jackson.us>",
   "repository": "mjackson/babel-plugin-import-visitor",
