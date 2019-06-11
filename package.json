@@ -1,9 +1,10 @@
 {
   "name": "babel-plugin-import-visitor",
+  "version": "0.1.0",
   "description": "Visit all import sources in Babel",
   "author": "Michael Jackson <michael@jackson.us>",
   "repository": "mjackson/babel-plugin-import-visitor",
-  "version": "0.1.0",
+  "license": "MIT",
   "main": "babel-plugin-import-visitor.js",
   "module": "babel-plugin-import-visitor.mjs",
   "files": [
@@ -21,6 +22,5 @@
   },
   "devDependencies": {
     "rollup": "^1.14.6"
-  },
-  "license": "MIT"
+  }
 }
