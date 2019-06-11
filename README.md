@@ -1,4 +1,9 @@
-## babel-plugin-import-visitor
+## babel-plugin-import-visitor [![Travis][build-badge]][build] [![npm package][npm-badge]][npm]
+
+[build-badge]: https://img.shields.io/travis/mjackson/babel-plugin-import-visitor/master.svg?style=flat-square
+[build]: https://travis-ci.org/mjackson/babel-plugin-import-visitor
+[npm-badge]: https://img.shields.io/npm/v/babel-plugin-import-visitor.svg?style=flat-square
+[npm]: https://www.npmjs.org/package/babel-plugin-import-visitor
 
 This Babel plugin gives you a way to visit all the `import` nodes (and `export from`) in a JavaScript program. It's useful for building your own plugins where you would like to somehow manipulate the `import` sources.
 
