@@ -1,11 +1,12 @@
 language: node_js
 cache: yarn
-before_script:
-- ([[ -z "$BUILD_ENV" ]] || yarn build)
-script:
-- yarn lint
 jobs:
   include:
+  - stage: Test
+    before_script:
+      - ([[ -z "$BUILD_ENV" ]] || yarn build)
+    script:
+      - yarn lint
   - stage: Release
     if: tag =~ ^v[0-9]
     env: NPM_TAG=$([[ "$TRAVIS_TAG" == *-* ]] && echo "next" || echo "latest")
