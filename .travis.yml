@@ -1,0 +1,20 @@
+language: node_js
+cache: yarn
+before_script:
+- ([[ -z "$BUILD_ENV" ]] || yarn build)
+script:
+- yarn lint
+jobs:
+  include:
+  - stage: Release
+    if: tag =~ ^v[0-9]
+    env: NPM_TAG=$([[ "$TRAVIS_TAG" == *-* ]] && echo "next" || echo "latest")
+    script: echo "Releasing $TRAVIS_TAG to npm with tag \"$NPM_TAG\" ..."
+    deploy:
+      provider: npm
+      skip_cleanup: true
+      tag: "$NPM_TAG"
+      email: npm@mjackson.me
+      api_key: "$NPM_TOKEN"
+      on:
+        tags: true
