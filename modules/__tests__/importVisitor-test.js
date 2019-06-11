@@ -3,6 +3,8 @@ import importVisitor from 'babel-plugin-import-visitor';
 
 function rewriteImports(code, to) {
   const options = {
+    // Don't look for .babelrc files.
+    babelrc: false,
     plugins: [
       importVisitor(node => {
         node.value = to;
