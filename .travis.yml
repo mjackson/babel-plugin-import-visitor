@@ -1,10 +1,10 @@
 language: node_js
 cache: yarn
+before_script:
+  - yarn build
 jobs:
   include:
   - stage: Test
-    before_script:
-      - ([[ -z "$BUILD_ENV" ]] || yarn build)
     script:
       - yarn lint
   - stage: Release
