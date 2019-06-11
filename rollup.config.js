@@ -1,3 +1,5 @@
+import babel from 'rollup-plugin-babel';
+
 import pkg from './package.json';
 
 function isBareModuleId(id) {
@@ -10,7 +12,8 @@ const mjs = {
   output: {
     file: `${pkg.name}.mjs`,
     format: 'es'
-  }
+  },
+  plugins: [babel()]
 };
 
 const umd = {
@@ -20,7 +23,8 @@ const umd = {
     name: pkg.name,
     file: `${pkg.name}.js`,
     format: 'umd'
-  }
+  },
+  plugins: [babel()]
 };
 
 export default [mjs, umd];
